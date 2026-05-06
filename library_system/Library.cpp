@@ -3,7 +3,7 @@
 using namespace std;
 
 void Library::addBook(Book b) {
-    book.push_back(b);
+    books.push_back(b);
 }
 
 void Library::addUser(User u) {
