@@ -16,7 +16,7 @@ void User::borrowBook(int bookID){
 }
 
 void User::returnBook(int bookID){
-    for(int i = 0; i < borrowedBooks.size(); i++){
+    for(size_t i = 0; i < (borrowedBooks.size()); i++){
         if(borrowedBooks[i] == bookID) {
             borrowedBooks.erase(borrowedBooks.begin()+i);
             break;
