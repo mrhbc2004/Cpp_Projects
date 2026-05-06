@@ -15,7 +15,7 @@ class User{
         // constructor
         User(int id, string n);
 
-        int getUserId();
+        int getUserID();
 
         void borrowBook(int bookID);
         void returnBook(int bookID);
