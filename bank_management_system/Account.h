@@ -20,6 +20,9 @@ class Account{
         virtual void deposit(double amount);
         virtual void withdraw(double amount);
 
+        // getter
+        int getAccountNumber() const;
+        
         void showBalance() const;
         void showTransactionHistory() const;
 

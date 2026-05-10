@@ -13,8 +13,9 @@ void Account::deposit(double amount){
     transactionHistory.push_back(
         "Deposited:" + std::to_string(amount)
     );
-
+    
     std::cout<<"Amount deposited successfully"<<std::endl;
+    std::cout<<"Current Balance: "<< balance;
 }
 
 void Account::withdraw(double amount){
@@ -26,6 +27,7 @@ void Account::withdraw(double amount){
             "Withdrawn:" + std::to_string(amount)
         );
         std::cout<<"withdrawal successful\n";
+        std::cout<<"Current Balance: "<< balance;
     }
     else {
         std::cout<<"Insufficient balance\n";
@@ -46,4 +48,8 @@ void Account::showTransactionHistory() const {
 
 void Account::calculateInterest(){
     std::cout<<"No interest calculation for generic account\n";
+}
+
+int Account::getAccountNumber() const{
+    return accountNumber;
 }
