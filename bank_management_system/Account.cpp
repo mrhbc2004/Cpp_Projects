@@ -1,0 +1,49 @@
+#include "Account.h"
+
+Account::Account(int accNo, std::string name, double bal){
+    accountNumber = accNo;
+    holderName    = name;
+    balance       = bal;
+}
+
+void Account::deposit(double amount){
+    balance+=amount; // adding the amount to the existing balance
+
+    // updating the transaction history
+    transactionHistory.pushback(
+        "Deposited:" + std::to_string(amount)
+    );
+
+    std::cout<<"Amount deposited successfully"<<std::endl;
+}
+
+void Account::withdraw(double amount){
+    if (amount <= balance){
+        balance-=amount; // deducting the amount and updating the balance
+
+        // updating the transaction history
+        transactionHistory.pushback(
+            "Withdrawn:" + std::to_string(amount);
+        );
+        std::cout<<"withdrawal successful\n";
+    }
+    else {
+        std::cout<<"Insufficient balance\n";
+    }
+}
+
+void Account::showBalance(){
+    std::cout<<"Current Balance:"<<balance<<std::endl;
+}
+
+void Account::showTransactionHistory(){
+    std::cout<<"\nTransaction History\n";
+
+    for(const auto &txn : transactionHistory){
+        std::cout<< txn << std::endl;
+    }
+}
+
+void Account::calculateInterest(){
+    std::cout<<"No interest calculation for generic account\n";
+}
