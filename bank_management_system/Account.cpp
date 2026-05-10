@@ -10,7 +10,7 @@ void Account::deposit(double amount){
     balance+=amount; // adding the amount to the existing balance
 
     // updating the transaction history
-    transactionHistory.pushback(
+    transactionHistory.push_back(
         "Deposited:" + std::to_string(amount)
     );
 
@@ -22,8 +22,8 @@ void Account::withdraw(double amount){
         balance-=amount; // deducting the amount and updating the balance
 
         // updating the transaction history
-        transactionHistory.pushback(
-            "Withdrawn:" + std::to_string(amount);
+        transactionHistory.push_back(
+            "Withdrawn:" + std::to_string(amount)
         );
         std::cout<<"withdrawal successful\n";
     }
@@ -32,11 +32,11 @@ void Account::withdraw(double amount){
     }
 }
 
-void Account::showBalance(){
+void Account::showBalance() const {
     std::cout<<"Current Balance:"<<balance<<std::endl;
 }
 
-void Account::showTransactionHistory(){
+void Account::showTransactionHistory() const {
     std::cout<<"\nTransaction History\n";
 
     for(const auto &txn : transactionHistory){

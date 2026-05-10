@@ -12,11 +12,11 @@ CurrentAccount::CurrentAccount(
 
 void CurrentAccount:: withdraw(double amount){
 
-    if (amount >= (balance + overdraftLimit)){
+    if (amount <= (balance + overdraftLimit)){
         balance -= amount;
 
-        transactionHistory.pushback(
-            "Withdrawn:" + to_string(amount);
+        transactionHistory.push_back(
+            "Withdrawn:" + std::to_string(amount)
         );
         std::cout<<"Withdrawn successfully\n";
     } else {

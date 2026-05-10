@@ -14,8 +14,8 @@ void SavingsAccount::calculateInterest(){
 
     balance+=interest; // Adding the interest to balance
 
-    transactionHistory.pushback(
-        "Interest Added" + std::to_string(interest);
+    transactionHistory.push_back(
+        "Interest Added:" + std::to_string(interest)
     );
 
     std::cout<<"Interest credited successfully\n";
