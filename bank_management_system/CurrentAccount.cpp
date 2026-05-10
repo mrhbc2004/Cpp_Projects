@@ -8,6 +8,10 @@ CurrentAccount::CurrentAccount(
 ) : Account(accNo, name, bal) 
 {
     overdraftLimit = limit;
+    
+    transactionHistory.push_back(
+        "Initial Deposit: "+std::to_string(bal)
+    );
 }
 
 void CurrentAccount:: withdraw(double amount){

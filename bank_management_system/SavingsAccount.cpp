@@ -7,6 +7,10 @@ SavingsAccount::SavingsAccount(
     double rate
 ) : Account(accNo, name, bal){
     interestRate = rate;
+
+    transactionHistory.push_back(
+        "Initial Deposit: "+std::to_string(bal)
+    );
 }
 
 void SavingsAccount::calculateInterest(){
